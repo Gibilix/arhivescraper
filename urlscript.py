@@ -4,13 +4,14 @@ import scraper
 header = ["Category", "Genre", "Language", "Status", "Published", "Updated", \
 "Packaged", "Rating", "Chapters", "Words", "Publisher", "Story URL", "Author URL", "Summary", "FullStory"]
 row = ["" for i in range(len(header))]
-
+tags = scraper.tags
+genres = scraper.genres
 
 with open("listofURLS.txt", 'r') as file:
   for line in file.readlines():
     scraper.url = line
     scraper.scrape
-    tags = scraper.tags
+    title = scraper.title
     for i in range(len(header)):
     	for tag in tags:
     		if header[i].lower() == tag:
