@@ -7,9 +7,9 @@ row = ["" for i in range(len(header))]
 tags = scraper.tags
 genres = scraper.genres
 
-with open("listofURLS.txt", 'r') as file:
-  for line in file.readlines():
-    scraper.url = line
+with open("listofURLS.txt", 'r') as URLS:
+  for link in URLS.readlines():
+    scraper.url = link
     scraper.scrape
     title = scraper.title
     for i in range(len(header)):
